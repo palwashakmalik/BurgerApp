@@ -1,12 +1,13 @@
+import './Burger.css'
 
-export const ButtonContainer = ({ addRemoveIngredient , type}) => (
+export const ButtonContainer = ({ state, dispatch }) => (
   <div>
-    <p>{type}</p>
-    <div className="ingrBtns">
-      <button className="ingrBtn" onClick={() => addRemoveIngredient('add', type)}>Add</button>
-      <button className="ingrBtn" onClick={() => addRemoveIngredient('remove', type)}>Remove</button>
+    <div>{state}</div>
+    <div className='ingrBtns'>
+      <button className='ingrBtn' onClick={() => dispatch({ ingredient: state, type: 'add' })}>Add</button>
+      <button className='ingrBtn' onClick={() => dispatch({ ingredient: state, type: 'remove' })}>Remove</button>
     </div>
-  </div >
+  </div>
 )
 
 export default ButtonContainer
